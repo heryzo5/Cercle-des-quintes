@@ -1,0 +1,21 @@
+<div class="cntCircle" #cntCircle>
+  <div
+    class="cntCircle__center"
+    (mousedown)="onDown($event)"
+    (mouseup)="onUp()"
+  ></div>
+  <div class="mainCircle" [ngClass]="{ addAnim: animation }">
+    @for (item of listKeys; track $index) {
+    <div class="mainCircle__item" #circleHalf>
+      <div
+        class="mainCircle__touch"
+        (click)="tonality(item, circleHalf)"
+        [ngStyle]="{ rotate: calculHalf($index) }"
+      ></div>
+      <div class="mainCircle__half" [ngStyle]="{ rotate: calculHalf($index) }">
+        <span>{{ item }}</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>

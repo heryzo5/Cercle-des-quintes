@@ -1,0 +1,141 @@
+.mainCircle {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  rotate: 0deg;
+  scale: 1;
+  transition: all 1s ease-in-out;
+  &.addAnim {
+    rotate: -180deg;
+    scale: 0;
+  }
+  &__half {
+    width: 1px;
+    height: 1px;
+    border-width: 200px 55px;
+    border-style: solid;
+    border-color: #ec96a1 transparent transparent;
+    border-radius: 14px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: left;
+    cursor: pointer;
+    span {
+      position: absolute;
+      top: -169px;
+      left: -12px;
+      display: block;
+      z-index: 999;
+      font-size: 21px;
+      transition: font-size 0.3s ease-in-out;
+    }
+  }
+  &__item {
+    &:nth-child(2) {
+      .mainCircle__half {
+        border-color: #efad81 transparent transparent;
+      }
+    }
+    &:nth-child(3) {
+      .mainCircle__half {
+        border-color: #f2c586 transparent transparent;
+      }
+    }
+    &:nth-child(4) {
+      .mainCircle__half {
+        border-color: #fbf799 transparent transparent;
+      }
+    }
+    &:nth-child(5) {
+      .mainCircle__half {
+        border-color: #c1e09c transparent transparent;
+      }
+    }
+    &:nth-child(6) {
+      .mainCircle__half {
+        border-color: #81ca99 transparent transparent;
+      }
+    }
+    &:nth-child(7) {
+      .mainCircle__half {
+        border-color: #76cdc6 transparent transparent;
+      }
+    }
+    &:nth-child(8) {
+      .mainCircle__half {
+        border-color: #6dcff5 transparent transparent;
+      }
+    }
+    &:nth-child(9) {
+      .mainCircle__half {
+        border-color: #7ca8db transparent transparent;
+      }
+    }
+    &:nth-child(10) {
+      .mainCircle__half {
+        border-color: #8780bd transparent transparent;
+      }
+    }
+    &:nth-child(11) {
+      .mainCircle__half {
+        border-color: #bf8bbc transparent transparent;
+      }
+    }
+    &:nth-child(12) {
+      .mainCircle__half {
+        border-color: #ed99c0 transparent transparent;
+      }
+    }
+  }
+  &__touch {
+    width: 99px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    z-index: 1;
+    transform-origin: bottom;
+    cursor: pointer;
+    &.active,
+    &:hover {
+      z-index: 3;
+    }
+    &.active + .mainCircle__half {
+      z-index: 2;
+    }
+    &.active + .mainCircle__half {
+      span {
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+        left: -21px;
+      }
+    }
+  }
+}
+.cntCircle {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__center {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+  }
+}
